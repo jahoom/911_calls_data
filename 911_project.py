@@ -33,7 +33,9 @@ print(df['Day of week'].value_counts())
 #sns.countplot(x='Month', data = df, hue = 'Reason', ax = axes[1])
 byMonth = df.groupby(['Month']).count()
 print(byMonth.head())
-lp_Month = sns.lineplot(data=byMonth['lat'], linewidth=2)
-lp_Month.set_ylim([7000,14000]); lp_Month.set_xlim([1,12])
+#lp_Month = sns.lineplot(data=byMonth['lat'], linewidth=2)
+#lp_Month.set_ylim([7000,14000]); lp_Month.set_xlim([1,12])
+
+linfit = sns.lmplot(data=byMonth.reset_index(), x='Month', y='lat')
 
 plt.show()
