@@ -7,4 +7,6 @@ df = pd.read_csv("911.csv")
 
 print("Informacje o pobranych danych: \n", df.info())
 print("Nagłówek pobranych danych: \n", df.head())
-print("Najpopularniejsze kody pocztowe: \n", df['zip'].value_counts().head(5))
+print("\nNajpopularniejsze kody pocztowe: \n", df['zip'].value_counts().head(5))
+print("\nNajpopularniejsze miasta zgłoszeń: \n", df['twp'].value_counts().head(5))
+print("\nUnikatowych tytułów jest: ", len(df['title'].unique()))
